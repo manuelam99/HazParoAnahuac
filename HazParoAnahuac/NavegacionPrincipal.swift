@@ -12,7 +12,7 @@ struct NavegacionPrincipal: View {
         TabView{
             Text("Favores")
                 .tabItem{Image(systemName: "list.bullet.rectangle")}
-            Text("Mis Paros")
+            MisParos()
                 .tabItem{Image(systemName: "checkmark.circle.fill")}
             Perfil()
                 .tabItem{Image(systemName: "person.fill")}
