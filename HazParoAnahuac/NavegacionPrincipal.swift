@@ -13,11 +13,11 @@ struct NavegacionPrincipal: View {
             Text("Favores")
                 .tabItem{Image(systemName: "list.bullet.rectangle")}
             Text("Mis Paros")
-                .tabItem{Image(systemName: "person.fill")}
-            Text("Perfil")
+                .tabItem{Image(systemName: "checkmark.circle.fill")}
+            Perfil()
                 .tabItem{Image(systemName: "person.fill")}
             Text("Mapa")
-                .tabItem{Image(systemName: "person.fill")}
+                .tabItem{Image(systemName: "map.fill")}
         }
     }
 }
