@@ -16,6 +16,8 @@
 		FBDE7FF12821F5A100ABBB4D /* FeedFavores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF02821F5A100ABBB4D /* FeedFavores.swift */; };
 		FBDE7FF32821F5C300ABBB4D /* NavegacionPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF22821F5C300ABBB4D /* NavegacionPrincipal.swift */; };
 		FBDE7FF52823379C00ABBB4D /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF42823379C00ABBB4D /* Perfil.swift */; };
+		FBDE7FF7282341DF00ABBB4D /* Mapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF6282341DF00ABBB4D /* Mapa.swift */; };
+		FBDE7FF9282347A100ABBB4D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF8282347A100ABBB4D /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		FBDE7FF02821F5A100ABBB4D /* FeedFavores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFavores.swift; sourceTree = "<group>"; };
 		FBDE7FF22821F5C300ABBB4D /* NavegacionPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionPrincipal.swift; sourceTree = "<group>"; };
 		FBDE7FF42823379C00ABBB4D /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
+		FBDE7FF6282341DF00ABBB4D /* Mapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapa.swift; sourceTree = "<group>"; };
+		FBDE7FF8282347A100ABBB4D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				FBDE7FF02821F5A100ABBB4D /* FeedFavores.swift */,
 				FBDE7FF22821F5C300ABBB4D /* NavegacionPrincipal.swift */,
 				FBDE7FF42823379C00ABBB4D /* Perfil.swift */,
+				FBDE7FF6282341DF00ABBB4D /* Mapa.swift */,
+				FBDE7FF8282347A100ABBB4D /* MapView.swift */,
 			);
 			path = HazParoAnahuac;
 			sourceTree = "<group>";
@@ -156,8 +162,10 @@
 				FBDE7FF52823379C00ABBB4D /* Perfil.swift in Sources */,
 				FBDE7FF32821F5C300ABBB4D /* NavegacionPrincipal.swift in Sources */,
 				FBDE7FF12821F5A100ABBB4D /* FeedFavores.swift in Sources */,
+				FBDE7FF7282341DF00ABBB4D /* Mapa.swift in Sources */,
 				FBDE7FEF2821F34C00ABBB4D /* Registrar.swift in Sources */,
 				FBDE7FE12821E74300ABBB4D /* ContentView.swift in Sources */,
+				FBDE7FF9282347A100ABBB4D /* MapView.swift in Sources */,
 				FBDE7FDF2821E74300ABBB4D /* HazParoAnahuacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
