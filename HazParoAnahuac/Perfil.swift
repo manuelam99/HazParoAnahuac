@@ -13,7 +13,7 @@ struct Perfil: View {
     
     var body: some View {
         VStack{
-            Text("Mi perfil")
+            Text("Mi perfil manuel")
             Text("Imagen")
             VStack{
                 TextField("Nombre", text: $nombre)
