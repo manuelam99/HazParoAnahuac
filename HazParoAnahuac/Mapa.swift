@@ -8,31 +8,28 @@
 import SwiftUI
 import MapKit
 
+struct Place: Identifiable {
+  let id = UUID()
+  var name: String
+  var coordinate: CLLocationCoordinate2D
+}
+
 struct Mapa: View {
-    @State private var region = MKCoordinateRegion(
-      // Anahuac
-      center: CLLocationCoordinate2D(latitude: 37.334803, longitude: -122.008965),
-      span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-    )
-
-    @State private var lineCoordinates = [
-
-      // Steve Jobs theatre
-      CLLocationCoordinate2D(latitude: 37.330828, longitude: -122.007495),
-
-      // Caffè Macs
-      CLLocationCoordinate2D(latitude: 37.336083, longitude: -122.007356),
-
-      // Apple wellness center
-      CLLocationCoordinate2D(latitude: 37.336901, longitude:  -122.012345)
-    ];
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 19.4006, longitude: -99.264), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    
+    var empireStateBuilding =
+    Place(name: "Empire State Building", coordinate: CLLocationCoordinate2D(latitude: 40.748433, longitude: -73.985656))
     
     var body: some View {
-        MapView(
-          region: region,
-          lineCoordinates: lineCoordinates
-        )
-          .edgesIgnoringSafeArea(.all)
+      NavigationView {
+        Map(coordinateRegion: $region, annotationItems: [empireStateBuilding]) { place in
+          MapAnnotation(coordinate: place.coordinate) {
+              PlaceAnnotationView(title: place.name)
+          }
+        }
+        .navigationTitle("Mapa de facultades")
+        .navigationBarTitleDisplayMode(.inline)
+      }
     }
 }
 
