@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import Foundation
 
 struct Place: Identifiable {
   let id = UUID()
@@ -14,23 +15,74 @@ struct Place: Identifiable {
   var coordinate: CLLocationCoordinate2D
 }
 
+class MapModel: ObservableObject {
+    @Published var mapType = MKMapType.standard
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 19.4006, longitude: -99.264), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+}
+
+
 struct Mapa: View {
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 19.4006, longitude: -99.264), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    
-    var empireStateBuilding =
-    Place(name: "Empire State Building", coordinate: CLLocationCoordinate2D(latitude: 40.748433, longitude: -73.985656))
-    
+    @EnvironmentObject var mapModel: MapModel
+
+    @State private var mapType: Int = 0
+    @State private var mapTypes = ["Standard", "Satellite", "Hybrid"]
+
     var body: some View {
-      NavigationView {
-        Map(coordinateRegion: $region, annotationItems: [empireStateBuilding]) { place in
-          MapAnnotation(coordinate: place.coordinate) {
-              PlaceAnnotationView(title: place.name)
-          }
+        ZStack (alignment: .topLeading) {
+            MapView().edgesIgnoringSafeArea(.all)
+            mapTools
         }
-        .navigationTitle("Mapa de facultades")
-        .navigationBarTitleDisplayMode(.inline)
-      }
     }
+
+    var mapTools: some View {
+        HStack {
+            Spacer()
+            Picker(selection: Binding<Int> (
+                get: {self.mapType},
+                set: {
+                    self.mapType = $0
+                    self.mapModel.mapType = self.getMapType()
+                }
+            ), label: Text("")) {
+                ForEach(0 ..< mapTypes.count) {
+                    Text(self.mapTypes[$0])
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+            .labelsHidden()
+            .frame(width: 222, height: 60)
+            .clipped()
+            Spacer()
+        }
+    }
+
+    func getMapType() -> MKMapType {
+        switch mapType {
+        case 0: return .standard
+        case 1: return .satellite
+        case 2: return .hybrid
+        default:
+            return .standard
+        }
+    }
+
+}
+
+struct MapView: UIViewRepresentable  {
+
+    @EnvironmentObject var mapModel: MapModel
+
+    let mapView = MKMapView()
+
+    func makeUIView(context: Context) -> MKMapView {
+        mapView.mapType = mapModel.mapType
+        mapView.setRegion(mapModel.region, animated: true)
+        return mapView
+    }
+
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.mapType = mapModel.mapType
+    }
+
 }
 
 struct Mapa_Previews: PreviewProvider {

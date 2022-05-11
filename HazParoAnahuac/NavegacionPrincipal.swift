@@ -16,7 +16,7 @@ struct NavegacionPrincipal: View {
                 .tabItem{Image(systemName: "checkmark.circle.fill")}
             Perfil()
                 .tabItem{Image(systemName: "person.fill")}
-            Mapa()
+            Mapa().environmentObject(MapModel())
                 .tabItem{Image(systemName: "map.fill")}
         }
     }
