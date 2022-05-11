@@ -25,7 +25,7 @@ struct MisParos: View {
                     .font(.system(size: 30))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                NavigationLink("Pendiente",destination: HechoCompleto())
+                NavigationLink("Pendiente",destination: HechoPendiente())
                     .frame(maxWidth: .infinity, alignment: .leading)
                 NavigationLink("Completo",destination: HechoCompleto())
                     .frame(maxWidth: .infinity, alignment: .leading)
