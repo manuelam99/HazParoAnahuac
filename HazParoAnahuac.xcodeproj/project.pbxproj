@@ -18,6 +18,8 @@
 		FBDE7FF52823379C00ABBB4D /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF42823379C00ABBB4D /* Perfil.swift */; };
 		FBDE7FF7282341DF00ABBB4D /* Mapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FF6282341DF00ABBB4D /* Mapa.swift */; };
 		FBDE7FFB2824906800ABBB4D /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FFA2824906800ABBB4D /* PlaceAnnotationView.swift */; };
+		FBDE7FFD282DCC5000ABBB4D /* VistaMadre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FFC282DCC5000ABBB4D /* VistaMadre.swift */; };
+		FBDE7FFF282DCCAA00ABBB4D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FFE282DCCAA00ABBB4D /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		FBDE7FF42823379C00ABBB4D /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		FBDE7FF6282341DF00ABBB4D /* Mapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapa.swift; sourceTree = "<group>"; };
 		FBDE7FFA2824906800ABBB4D /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
+		FBDE7FFC282DCC5000ABBB4D /* VistaMadre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaMadre.swift; sourceTree = "<group>"; };
+		FBDE7FFE282DCCAA00ABBB4D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				FBDE7FF42823379C00ABBB4D /* Perfil.swift */,
 				FBDE7FF6282341DF00ABBB4D /* Mapa.swift */,
 				FBDE7FFA2824906800ABBB4D /* PlaceAnnotationView.swift */,
+				FBDE7FFC282DCC5000ABBB4D /* VistaMadre.swift */,
+				FBDE7FFE282DCCAA00ABBB4D /* Utils.swift */,
 			);
 			path = HazParoAnahuac;
 			sourceTree = "<group>";
@@ -163,7 +169,9 @@
 				FBDE7FF32821F5C300ABBB4D /* NavegacionPrincipal.swift in Sources */,
 				FBDE7FFB2824906800ABBB4D /* PlaceAnnotationView.swift in Sources */,
 				FBDE7FF12821F5A100ABBB4D /* FeedFavores.swift in Sources */,
+				FBDE7FFD282DCC5000ABBB4D /* VistaMadre.swift in Sources */,
 				FBDE7FF7282341DF00ABBB4D /* Mapa.swift in Sources */,
+				FBDE7FFF282DCCAA00ABBB4D /* Utils.swift in Sources */,
 				FBDE7FEF2821F34C00ABBB4D /* Registrar.swift in Sources */,
 				FBDE7FE12821E74300ABBB4D /* ContentView.swift in Sources */,
 				FBDE7FDF2821E74300ABBB4D /* HazParoAnahuacApp.swift in Sources */,

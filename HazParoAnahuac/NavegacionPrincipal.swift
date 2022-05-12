@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NavegacionPrincipal: View {
+    @StateObject var viewRouter: ViewRouter
+    
     var body: some View {
         TabView{
             Text("Favores")
@@ -24,6 +26,6 @@ struct NavegacionPrincipal: View {
 
 struct NavegacionPrincipal_Previews: PreviewProvider {
     static var previews: some View {
-        NavegacionPrincipal()
+        NavegacionPrincipal(viewRouter: ViewRouter())
     }
 }

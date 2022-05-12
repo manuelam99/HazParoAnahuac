@@ -17,7 +17,7 @@ struct Place: Identifiable {
 
 class MapModel: ObservableObject {
     @Published var mapType = MKMapType.standard
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 19.4006, longitude: -99.264), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 19.4006, longitude: -99.264), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
 }
 
 
@@ -29,7 +29,7 @@ struct Mapa: View {
 
     var body: some View {
         ZStack (alignment: .topLeading) {
-            MapView().edgesIgnoringSafeArea(.all)
+            MapView().edgesIgnoringSafeArea(.all).navigationTitle("Ubi KT")
             mapTools
         }
     }

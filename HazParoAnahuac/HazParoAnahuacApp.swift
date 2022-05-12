@@ -12,7 +12,7 @@ struct HazParoAnahuacApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            NavegacionPrincipal()
+            VistaMadre(viewRouter: ViewRouter())
         }
     }
 }

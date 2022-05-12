@@ -12,6 +12,7 @@ struct Registrar: View {
     @State var correoUsr: String = ""
     @State var contraUsr: String = ""
     @State var confirmarContraUsr: String = ""
+    @StateObject var viewRouter: ViewRouter
     
     var body: some View {
         VStack{
@@ -36,6 +37,6 @@ struct Registrar: View {
 
 struct Registrar_Previews: PreviewProvider {
     static var previews: some View {
-        Registrar()
+        Registrar(viewRouter: ViewRouter())
     }
 }
