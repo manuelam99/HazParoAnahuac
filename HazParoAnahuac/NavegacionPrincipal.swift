@@ -10,7 +10,7 @@ import SwiftUI
 struct NavegacionPrincipal: View {
     var body: some View {
         TabView{
-            Text("Favores")
+            FeedFavores()
                 .tabItem{Image(systemName: "list.bullet.rectangle")}
             MisParos()
                 .tabItem{Image(systemName: "checkmark.circle.fill")}
