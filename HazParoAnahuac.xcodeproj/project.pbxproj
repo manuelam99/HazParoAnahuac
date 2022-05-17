@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB5ED80C28233F2400A691BA /* HechoCompleto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80528233F2300A691BA /* HechoCompleto.swift */; };
+		FB5ED80D28233F2400A691BA /* PedidoPendiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80628233F2300A691BA /* PedidoPendiente.swift */; };
+		FB5ED80E28233F2400A691BA /* ParoElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80728233F2300A691BA /* ParoElement.swift */; };
+		FB5ED80F28233F2400A691BA /* PedidoCompleto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80828233F2400A691BA /* PedidoCompleto.swift */; };
+		FB5ED81028233F2400A691BA /* DetalleFavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80928233F2400A691BA /* DetalleFavor.swift */; };
+		FB5ED81128233F2400A691BA /* HechoPendiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80A28233F2400A691BA /* HechoPendiente.swift */; };
+		FB5ED81228233F2400A691BA /* ElementoListaParo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED80B28233F2400A691BA /* ElementoListaParo.swift */; };
+		FB5ED814282340A200A691BA /* MisParos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED813282340A200A691BA /* MisParos.swift */; };
 		FBDE7FDF2821E74300ABBB4D /* HazParoAnahuacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FDE2821E74300ABBB4D /* HazParoAnahuacApp.swift */; };
 		FBDE7FE12821E74300ABBB4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE7FE02821E74300ABBB4D /* ContentView.swift */; };
 		FBDE7FE32821E74D00ABBB4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE7FE22821E74D00ABBB4D /* Assets.xcassets */; };
@@ -19,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB5ED80528233F2300A691BA /* HechoCompleto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HechoCompleto.swift; path = ../../../../Desktop/HechoCompleto.swift; sourceTree = "<group>"; };
+		FB5ED80628233F2300A691BA /* PedidoPendiente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PedidoPendiente.swift; path = ../../../../Desktop/PedidoPendiente.swift; sourceTree = "<group>"; };
+		FB5ED80728233F2300A691BA /* ParoElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParoElement.swift; path = ../../../../Desktop/ParoElement.swift; sourceTree = "<group>"; };
+		FB5ED80828233F2400A691BA /* PedidoCompleto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PedidoCompleto.swift; path = ../../../../Desktop/PedidoCompleto.swift; sourceTree = "<group>"; };
+		FB5ED80928233F2400A691BA /* DetalleFavor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetalleFavor.swift; path = ../../../../Desktop/DetalleFavor.swift; sourceTree = "<group>"; };
+		FB5ED80A28233F2400A691BA /* HechoPendiente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HechoPendiente.swift; path = ../../../../Desktop/HechoPendiente.swift; sourceTree = "<group>"; };
+		FB5ED80B28233F2400A691BA /* ElementoListaParo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementoListaParo.swift; path = ../../../../Desktop/ElementoListaParo.swift; sourceTree = "<group>"; };
+		FB5ED813282340A200A691BA /* MisParos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisParos.swift; sourceTree = "<group>"; };
 		FBDE7FDB2821E74300ABBB4D /* HazParoAnahuac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HazParoAnahuac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE7FDE2821E74300ABBB4D /* HazParoAnahuacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazParoAnahuacApp.swift; sourceTree = "<group>"; };
 		FBDE7FE02821E74300ABBB4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +86,14 @@
 				FBDE7FF02821F5A100ABBB4D /* FeedFavores.swift */,
 				FBDE7FF22821F5C300ABBB4D /* NavegacionPrincipal.swift */,
 				FBDE7FF42823379C00ABBB4D /* Perfil.swift */,
+				FB5ED80928233F2400A691BA /* DetalleFavor.swift */,
+				FB5ED80B28233F2400A691BA /* ElementoListaParo.swift */,
+				FB5ED80528233F2300A691BA /* HechoCompleto.swift */,
+				FB5ED80A28233F2400A691BA /* HechoPendiente.swift */,
+				FB5ED813282340A200A691BA /* MisParos.swift */,
+				FB5ED80728233F2300A691BA /* ParoElement.swift */,
+				FB5ED80828233F2400A691BA /* PedidoCompleto.swift */,
+				FB5ED80628233F2300A691BA /* PedidoPendiente.swift */,
 			);
 			path = HazParoAnahuac;
 			sourceTree = "<group>";
@@ -152,12 +176,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5ED80C28233F2400A691BA /* HechoCompleto.swift in Sources */,
 				FBDE7FED2821ED9400ABBB4D /* Login.swift in Sources */,
+				FB5ED80E28233F2400A691BA /* ParoElement.swift in Sources */,
+				FB5ED814282340A200A691BA /* MisParos.swift in Sources */,
+				FB5ED80D28233F2400A691BA /* PedidoPendiente.swift in Sources */,
 				FBDE7FF52823379C00ABBB4D /* Perfil.swift in Sources */,
 				FBDE7FF32821F5C300ABBB4D /* NavegacionPrincipal.swift in Sources */,
+				FB5ED81228233F2400A691BA /* ElementoListaParo.swift in Sources */,
+				FB5ED80F28233F2400A691BA /* PedidoCompleto.swift in Sources */,
 				FBDE7FF12821F5A100ABBB4D /* FeedFavores.swift in Sources */,
 				FBDE7FEF2821F34C00ABBB4D /* Registrar.swift in Sources */,
 				FBDE7FE12821E74300ABBB4D /* ContentView.swift in Sources */,
+				FB5ED81128233F2400A691BA /* HechoPendiente.swift in Sources */,
+				FB5ED81028233F2400A691BA /* DetalleFavor.swift in Sources */,
 				FBDE7FDF2821E74300ABBB4D /* HazParoAnahuacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
