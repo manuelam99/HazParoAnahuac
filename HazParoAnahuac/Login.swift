@@ -11,7 +11,7 @@ struct Login: View {
     @State var correo: String = ""
     @State var pass: String = ""
     @StateObject var viewRouter: ViewRouter
-    var usr: Usuario
+    @State var usr: Usuario = Usuario(_id:"", nombre: "", correo: "", password: "")
     
     var body: some View {
         VStack{
@@ -21,25 +21,20 @@ struct Login: View {
             TextField("Correo", text: $correo)
             SecureField("Contraseña", text: $pass)
         }
-        Button("Acceder", action: logIn)
+        Button("Acceder", action: chckUsr)
         .buttonStyle(.bordered)
-    }
-    
-    func logIn() -> Void {
-        viewRouter.currentPage = .mainPage
     }
     
     func registrarse() -> Void {
         
     }
     
-    func chckUsr() async -> Usuario{
-        var res: Bool = false
+    func chckUsr() -> Void{
         
-        guard let url = URL(string: "https://pf-pdmii.glitch.me/") else
+        guard let url = URL(string: "https://pf-pdmii.glitch.me/usuarios/\(correo)/\(pass)") else
         {
             print("error url")
-            return false
+            return
             
         }
         URLSession.shared.dataTask(with: url)
@@ -56,7 +51,7 @@ struct Login: View {
                 if let d = data {
                     let result = try JSONDecoder().decode(Usuario.self, from: d)
                     DispatchQueue.main.async {
-                        self.frutas = result.data
+                        self.usr = result
                     } //fin async
                 } // fin data
                 else
@@ -68,12 +63,15 @@ struct Login: View {
             catch let JsonError
             {
                 print("error en json ", JsonError.localizedDescription)
-             }
+            }
                 
                 
         }.resume()
         
-        return res
+        if(self.usr._id != ""){
+            viewRouter.currentPage = .mainPage
+        }
+        
     }
     
 }
