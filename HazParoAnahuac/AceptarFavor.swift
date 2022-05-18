@@ -9,8 +9,58 @@ import SwiftUI
 
 struct AceptarFavor: View {
     var paro = ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)
+    @State var paros = [ParoElement]()
+    @State var regreso = DataModel(error: true, message: "", data: [ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)])
     @State private var color = ""
     @State private var miEstatus = ""
+    //MARK: - aceptarParo
+    func aceptarParo(parameters: [String: Any]) // parametrers es un diccionario
+    {
+        guard let url = URL(string: "https://pf-pdmii.glitch.me/paroUpdate") else
+        {
+            print("error url")
+            return
+            
+        }
+        let data = try! JSONSerialization.data(withJSONObject: parameters)
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.httpBody = data
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        URLSession.shared.dataTask(with: request)
+        { (data,res,error) in
+            
+            if error != nil
+            {
+                print("error ", error?.localizedDescription ?? "")
+                return
+            }
+            
+            do
+            {
+                if let d = data {
+                    let result = try JSONDecoder().decode(DataModel.self, from: d)
+                    DispatchQueue.main.async {
+                        self.paros = result.data
+                    } //fin async
+                } // fin data
+                else
+                {
+                    print("no hay datos")
+                }
+                
+            }//fin del do
+            catch let JsonError
+            {
+                print("error en json ", JsonError.localizedDescription)
+             }
+                
+                
+        }.resume() // fin dataTask
+
+    } //fin de creaFruits
     func selecColor () async
    {
        
@@ -51,15 +101,19 @@ struct AceptarFavor: View {
             VStack{
                 Text("\n").font(.system(size: 10))
                 Button(action: {
-                            }, label: {
-                                Text("Aceptar Paro")
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.orange)
-                                    .cornerRadius(10)
-                                    .shadow(radius: 10)
+                    let params : [String:Any]  = [
+                        "id": self.paro.id, "definicion": self.paro.definicion, "tipo": self.paro.tipo, "precio": self.paro.precio, "solicitante": self.paro.solicitante, "ejecutor": self.paro.ejecutor, "deDonde": self.paro.deDonde, "aDonde": self.paro.aDonde, "comentario": self.paro.comentario, "estatus": self.paro.estatus
+                    ]
+                    aceptarParo(parameters: params)
+                        }, label: {
+                            Text("Hacer Paro")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.orange)
+                                .cornerRadius(10)
+                                .shadow(radius: 10)
                             }
                 )
             }//fin 2VStack

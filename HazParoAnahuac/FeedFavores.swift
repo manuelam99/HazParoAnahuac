@@ -31,7 +31,7 @@ struct FeedFavores: View {
        var an = [ParoElement]()
        let a = ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)
        an.append(a)
-       @State var urlconsumo: String = "https://pf-pdmii.glitch.me/paros"
+       @State var urlconsumo: String = "https://pf-pdmii.glitch.me/paros/1"
             print (urlconsumo)
             guard let url = URL(string: urlconsumo) else {
                 print("error")
