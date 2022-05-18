@@ -54,20 +54,33 @@ struct FeedFavores: View {
     
     var body: some View {
         NavigationView{
-            List(self.paros)
-                {
-                    par in
-                    NavigationLink(destination: AceptarFavor(paro : par)){
-                        ElementoListaParo(paro: par, color:"",titulo: "Haz Paro")
+            VStack{
+                List(self.paros)
+                    {
+                        par in
+                        NavigationLink(destination: AceptarFavor(coreDM: CoreDataManager(), paro : par)){
+                            ElementoListaParo(paro: par, color:"",titulo: "Haz Paro")
+                        }
                     }
-                }
-                .task
-                {
-                    await llenadatos()
-                }
-                /*NavigationLink(destination: DetalleFavor()){
-                    ElementoListaParo(titulo: "Hechos Completos")
-                }*/
+                    .task
+                    {
+                        await llenadatos()
+                    }
+                    /*NavigationLink(destination: DetalleFavor()){
+                        ElementoListaParo(titulo: "Hechos Completos")
+                    }*/
+                    .toolbar{
+                        ToolbarItemGroup(placement: .navigationBarTrailing){
+                            NavigationLink("+   ",destination: CrearParo())
+                                .frame(alignment: .leading)
+                                .font(.title2)
+                                .background(Color(red:0.98,green:0.5,blue:0.04))
+                                .foregroundColor(Color.white)
+                                .cornerRadius(3)
+                                .shadow(radius: 3)
+                        }
+                    }
+            }//fin VStack
         }//fin NavigationView
     }//View body
 }

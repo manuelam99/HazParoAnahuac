@@ -8,14 +8,47 @@
 import SwiftUI
 
 struct AceptarFavor: View {
+    let coreDM: CoreDataManager
     var paro = ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)
     @State var paros = [ParoElement]()
     @State var regreso = DataModel(error: true, message: "", data: [ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)])
     @State private var color = ""
     @State private var miEstatus = ""
+    @State private var miID : [UserID] = [UserID]()
+    
+    func sacaID(){
+        //coreDM.savePelicula(titulo: "6269abd9a7abe6a6287d89ef")
+        miID=coreDM.getAllPelculas()
+        
+        List{
+            ForEach(miID, id:\.self){
+                peli in
+                NavigationLink(
+                    destination: FeedFavores(),
+                    label: {
+                        Text(peli.idusuario ?? "")
+                    }
+                )//fin NavigationLink
+            }//fin ForEach
+            .onDelete(perform: {
+                indexSet in
+                indexSet.forEach{
+                    index in
+                    let peli = miID[index]
+                    coreDM.deletePelicula(pelicula: peli)
+                    miID=coreDM.getAllPelculas()
+                }//fin ForEach
+            })//fin onDelete
+        }//fin List
+    }
+    
     //MARK: - aceptarParo
     func aceptarParo(parameters: [String: Any]) // parametrers es un diccionario
     {
+        let params : [String:Any]  = [
+            "id": self.paro.id, "ejecutor": self.paro.ejecutor, "estatus": "2"
+        ]
+        print(params)
         guard let url = URL(string: "https://pf-pdmii.glitch.me/paroUpdate") else
         {
             print("error url")
@@ -101,10 +134,9 @@ struct AceptarFavor: View {
             VStack{
                 Text("\n").font(.system(size: 10))
                 Button(action: {
-                    let params : [String:Any]  = [
-                        "id": self.paro.id, "definicion": self.paro.definicion, "tipo": self.paro.tipo, "precio": self.paro.precio, "solicitante": self.paro.solicitante, "ejecutor": self.paro.ejecutor, "deDonde": self.paro.deDonde, "aDonde": self.paro.aDonde, "comentario": self.paro.comentario, "estatus": self.paro.estatus
-                    ]
-                    aceptarParo(parameters: params)
+                    sacaID()
+                    //aceptarParo(parameters: params)
+                    print("Soy un boton yei")
                         }, label: {
                             Text("Hacer Paro")
                                 .font(.largeTitle)
@@ -129,6 +161,6 @@ struct AceptarFavor: View {
 
 struct AceptarFavor_Previews: PreviewProvider {
     static var previews: some View {
-        AceptarFavor()
+        AceptarFavor(coreDM: CoreDataManager())
     }
 }
