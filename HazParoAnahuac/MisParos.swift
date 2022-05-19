@@ -56,6 +56,9 @@ struct MisParos: View {
                         .cornerRadius(10)
                         .shadow(radius: 10)
                 }//fin 2VStack
+                Image("perrito3")
+                    .resizable()
+                    .frame(width: 200, height: 200)
                 Spacer()
             }//VStack
             .navigationTitle("Mis Paros")

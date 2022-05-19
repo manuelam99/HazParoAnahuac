@@ -14,7 +14,9 @@ struct Perfil: View {
     var body: some View {
         VStack{
             Text("Mi perfil manuel")
-            Text("Imagen")
+            Image("perrito2")
+                .resizable()
+                .frame(width: 200, height: 200)
             VStack{
                 TextField("Nombre", text: $nombre)
                 TextField("Correo", text: $correo)

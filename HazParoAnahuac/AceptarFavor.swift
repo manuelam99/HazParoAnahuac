@@ -15,6 +15,7 @@ struct AceptarFavor: View {
     @State private var color = ""
     @State private var miEstatus = ""
     @State private var miID : [UserID] = [UserID]()
+    @State private var goToView: Bool = false
     
     func sacaID(){
         //coreDM.savePelicula(titulo: "6269abd9a7abe6a6287d89ef")
@@ -45,11 +46,7 @@ struct AceptarFavor: View {
     //MARK: - aceptarParo
     func aceptarParo(parameters: [String: Any]) // parametrers es un diccionario
     {
-        let params : [String:Any]  = [
-            "id": self.paro.id, "ejecutor": self.paro.ejecutor, "estatus": "2"
-        ]
-        print(params)
-        guard let url = URL(string: "https://pf-pdmii.glitch.me/paroUpdate") else
+        guard let url = URL(string: "https://common-sugared-smartphone.glitch.me/paroUpdate") else
         {
             print("error url")
             return
@@ -57,7 +54,7 @@ struct AceptarFavor: View {
         }
         let data = try! JSONSerialization.data(withJSONObject: parameters)
         var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
+        request.httpMethod = "POST"
         request.httpBody = data
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -134,8 +131,12 @@ struct AceptarFavor: View {
             VStack{
                 Text("\n").font(.system(size: 10))
                 Button(action: {
-                    sacaID()
-                    //aceptarParo(parameters: params)
+                    let params : [String:Any]  = [
+                        "id": self.paro.id, "ejecutor": "6269accea7abe6a6287d89f1", "estatus": "2"
+                    ]
+                    print(params)
+                    aceptarParo(parameters: params)
+                    self.goToView.toggle()
                     print("Soy un boton yei")
                         }, label: {
                             Text("Hacer Paro")
@@ -149,6 +150,8 @@ struct AceptarFavor: View {
                             }
                 )
             }//fin 2VStack
+            NavigationLink(destination: FeedFavores(), isActive:
+               self.$goToView) { EmptyView() }
         }//fin VStack
         .navigationTitle("Aceptar Paro")
         .font(.system(size: 30))

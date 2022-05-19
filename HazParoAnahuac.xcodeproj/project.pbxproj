@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB5ED814282340A200A691BA /* MisParos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED813282340A200A691BA /* MisParos.swift */; };
 		FB22896F28344CBE00D6670A /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB22896E28344CBE00D6670A /* Usuario.swift */; };
+		FB5ED814282340A200A691BA /* MisParos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED813282340A200A691BA /* MisParos.swift */; };
 		FB7B613F2835BD0E00D52DCE /* CrearParo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B613E2835BD0E00D52DCE /* CrearParo.swift */; };
 		FB8EACCA28352CAE009E6301 /* DataModelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB8EACC828352CAE009E6301 /* DataModelo.xcdatamodeld */; };
 		FB8EACCC28353074009E6301 /* DetalleFavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EACCB28353074009E6301 /* DetalleFavor.swift */; };
@@ -36,8 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB5ED813282340A200A691BA /* MisParos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisParos.swift; sourceTree = "<group>"; };
 		FB22896E28344CBE00D6670A /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		FB5ED813282340A200A691BA /* MisParos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisParos.swift; sourceTree = "<group>"; };
 		FB7B613E2835BD0E00D52DCE /* CrearParo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearParo.swift; sourceTree = "<group>"; };
 		FB8EACC928352CAE009E6301 /* DataModelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModelo.xcdatamodel; sourceTree = "<group>"; };
 		FB8EACCB28353074009E6301 /* DetalleFavor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleFavor.swift; sourceTree = "<group>"; };
@@ -108,9 +108,6 @@
 				FBDE7FF42823379C00ABBB4D /* Perfil.swift */,
 				FBF0714E2833D0C400370530 /* AceptarFavor.swift */,
 				FB5ED813282340A200A691BA /* MisParos.swift */,
-				FB5ED80728233F2300A691BA /* ParoElement.swift */,
-				FB5ED80828233F2400A691BA /* PedidoCompleto.swift */,
-				FB5ED80628233F2300A691BA /* PedidoPendiente.swift */,
 				FBDE7FF6282341DF00ABBB4D /* Mapa.swift */,
 				FBDE7FFA2824906800ABBB4D /* PlaceAnnotationView.swift */,
 				FBDE7FFC282DCC5000ABBB4D /* VistaMadre.swift */,
@@ -215,8 +212,6 @@
 				FB8EACDA283532D7009E6301 /* CoreDataManager.swift in Sources */,
 				FBDE7FF52823379C00ABBB4D /* Perfil.swift in Sources */,
 				FBDE7FF32821F5C300ABBB4D /* NavegacionPrincipal.swift in Sources */,
-				FB5ED81228233F2400A691BA /* ElementoListaParo.swift in Sources */,
-				FB5ED80F28233F2400A691BA /* PedidoCompleto.swift in Sources */,
 				FBDE7FFB2824906800ABBB4D /* PlaceAnnotationView.swift in Sources */,
 				FBDE7FF12821F5A100ABBB4D /* FeedFavores.swift in Sources */,
 				FBDE7FFD282DCC5000ABBB4D /* VistaMadre.swift in Sources */,

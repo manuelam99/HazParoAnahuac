@@ -12,8 +12,8 @@ struct HazParoAnahuacApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            VistaMadre(viewRouter: ViewRouter())
-            //NavegacionPrincipal(viewRouter: ViewRouter())
+            //VistaMadre(viewRouter: ViewRouter())
+            NavegacionPrincipal(viewRouter: ViewRouter())
         }
     }
 }

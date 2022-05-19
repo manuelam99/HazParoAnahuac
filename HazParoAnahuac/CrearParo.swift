@@ -17,6 +17,7 @@ struct CrearParo: View {
     @State var comentario: String = ""
     @State var paros = [ParoElement]()
     @State var regreso = DataModel(error: true, message: "", data: [ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)])
+    @State private var goToView: Bool = false
     
     //MARK: - aceptarParo
     func crearParo(parameters: [String: Any]) // parametrers es un diccionario
@@ -89,8 +90,9 @@ struct CrearParo: View {
                     print(params)
                     print("Soy un boton yei")
                     crearParo(parameters: params)
+                    self.goToView.toggle()
                         }, label: {
-                            Text("Hacer Paro")
+                            Text("Crear Paro")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
@@ -100,6 +102,8 @@ struct CrearParo: View {
                                 .shadow(radius: 10)
                             }
                 )
+                NavigationLink(destination: FeedFavores(), isActive:
+                   self.$goToView) { EmptyView() }
             }
         }
         .buttonStyle(.bordered)
