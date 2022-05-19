@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8985F9E22836030B006AD8C0 /* CompletarParo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8985F9E12836030B006AD8C0 /* CompletarParo.swift */; };
 		FB22896F28344CBE00D6670A /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB22896E28344CBE00D6670A /* Usuario.swift */; };
 		FB5ED814282340A200A691BA /* MisParos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5ED813282340A200A691BA /* MisParos.swift */; };
 		FB7B613F2835BD0E00D52DCE /* CrearParo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B613E2835BD0E00D52DCE /* CrearParo.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8985F9E12836030B006AD8C0 /* CompletarParo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletarParo.swift; sourceTree = "<group>"; };
 		FB22896E28344CBE00D6670A /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		FB5ED813282340A200A691BA /* MisParos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisParos.swift; sourceTree = "<group>"; };
 		FB7B613E2835BD0E00D52DCE /* CrearParo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearParo.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				FBDE7FFE282DCCAA00ABBB4D /* Utils.swift */,
 				FB22896E28344CBE00D6670A /* Usuario.swift */,
 				FB8EACCB28353074009E6301 /* DetalleFavor.swift */,
+				8985F9E12836030B006AD8C0 /* CompletarParo.swift */,
 				FB8EACCD28353086009E6301 /* ParoElement.swift */,
 				FB8EACCE28353086009E6301 /* PedidoCompleto.swift */,
 				FB8EACCF28353087009E6301 /* PedidoPendiente.swift */,
@@ -214,6 +217,7 @@
 				FBDE7FF32821F5C300ABBB4D /* NavegacionPrincipal.swift in Sources */,
 				FBDE7FFB2824906800ABBB4D /* PlaceAnnotationView.swift in Sources */,
 				FBDE7FF12821F5A100ABBB4D /* FeedFavores.swift in Sources */,
+				8985F9E22836030B006AD8C0 /* CompletarParo.swift in Sources */,
 				FBDE7FFD282DCC5000ABBB4D /* VistaMadre.swift in Sources */,
 				FBDE7FF7282341DF00ABBB4D /* Mapa.swift in Sources */,
 				FBDE7FFF282DCCAA00ABBB4D /* Utils.swift in Sources */,

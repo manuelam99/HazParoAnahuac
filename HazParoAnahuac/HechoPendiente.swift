@@ -32,6 +32,7 @@ struct HechoPendiente: View {
        let a = ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)
        an.append(a)
        @State var urlconsumo: String = "https://pf-pdmii.glitch.me/paros/ejecutor/6269accea7abe6a6287d89f1/pendientes"
+       //@State var urlconsumo: String = "https://pf-pdmii.glitch.me/paros/ejecutor/6269abd9a7abe6a6287d89ef/pendientes"
             print (urlconsumo)
             guard let url = URL(string: urlconsumo) else {
                 print("error")

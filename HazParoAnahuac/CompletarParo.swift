@@ -1,50 +1,23 @@
 //
-//  AceptarFavor.swift
+//  CompletarParo.swift
 //  HazParoAnahuac
 //
-//  Created by alumno on 17/05/22.
+//  Created by Valeria Vazquez on 18/05/22.
 //
 
 import SwiftUI
 
-struct AceptarFavor: View {
-    let coreDM: CoreDataManager
+struct CompletarParo: View {
     var paro = ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)
-    @State var paros = [ParoElement]()
-    @State var regreso = DataModel(error: true, message: "", data: [ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)])
     @State private var color = ""
     @State private var miEstatus = ""
-    @State private var miID : [UserID] = [UserID]()
+    @State private var miReceptor = ""
+    @State var paros = [ParoElement]()
+    @State var regreso = DataModel(error: true, message: "", data: [ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)])
     @State private var goToView: Bool = false
     
-    func sacaID(){
-        //coreDM.savePelicula(titulo: "6269abd9a7abe6a6287d89ef")
-        miID=coreDM.getAllPelculas()
-        
-        List{
-            ForEach(miID, id:\.self){
-                peli in
-                NavigationLink(
-                    destination: FeedFavores(),
-                    label: {
-                        Text(peli.idusuario ?? "")
-                    }
-                )//fin NavigationLink
-            }//fin ForEach
-            .onDelete(perform: {
-                indexSet in
-                indexSet.forEach{
-                    index in
-                    let peli = miID[index]
-                    coreDM.deletePelicula(pelicula: peli)
-                    miID=coreDM.getAllPelculas()
-                }//fin ForEach
-            })//fin onDelete
-        }//fin List
-    }
-    
     //MARK: - aceptarParo
-    func aceptarParo(parameters: [String: Any]) // parametrers es un diccionario
+    func completarParo(parameters: [String: Any]) // parametrers es un diccionario
     {
         guard let url = URL(string: "https://common-sugared-smartphone.glitch.me/paroUpdate") else
         {
@@ -91,6 +64,7 @@ struct AceptarFavor: View {
         }.resume() // fin dataTask
 
     } //fin de creaFruits
+    
     func selecColor () async
    {
        
@@ -106,6 +80,11 @@ struct AceptarFavor: View {
              }else{
                  self.color="orange"
                  self.miEstatus="Paro Completado"
+             }
+             if(paro.ejecutor == ""){
+                 miReceptor=""
+             }else{
+                 miReceptor="Realizado por: \(paro.ejecutor)"
              }
               
          }
@@ -127,38 +106,36 @@ struct AceptarFavor: View {
             }
             Divider()
             Text("Pedido por: \(paro.solicitante)")
-            Divider()
-            VStack{
-                Text("\n").font(.system(size: 10))
-                Button(action: {
-                    let params : [String:Any]  = [
-                        "id": self.paro.id, "ejecutor": "6269accea7abe6a6287d89f1", "estatus": "2"
-                    ]
-                    /*
-                    let params : [String:Any]  = [
-                        "id": self.paro.id, "ejecutor": "6269abd9a7abe6a6287d89ef", "estatus": "2"
-                    ]
-                    */
-                    print(params)
-                    aceptarParo(parameters: params)
-                    self.goToView.toggle()
-                    print("Soy un boton yei")
-                        }, label: {
-                            Text("Hacer Paro")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color.orange)
-                                .cornerRadius(10)
-                                .shadow(radius: 10)
-                            }
-                )
-            }//fin 2VStack
-            NavigationLink(destination: FeedFavores(), isActive:
+            Text(self.miReceptor)
+            Button(action: {
+                let params : [String:Any]  = [
+                    "id": self.paro.id, "ejecutor": "6269abd9a7abe6a6287d89ef", "estatus": "3"
+                ]
+                /*
+                let params : [String:Any]  = [
+                    "id": self.paro.id, "ejecutor": "6269accea7abe6a6287d89f1", "estatus": "3"
+                ]
+                 */
+                print(params)
+                completarParo(parameters: params)
+                self.goToView.toggle()
+                print("Soy un boton yei")
+                self.goToView.toggle()
+                    }, label: {
+                        Text("Completar Paro")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.orange)
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                        }
+            )
+            NavigationLink(destination: MisParos(), isActive:
                self.$goToView) { EmptyView() }
         }//fin VStack
-        .navigationTitle("Aceptar Paro")
+        .navigationTitle("Detalle del Paro")
         .font(.system(size: 30))
         .navigationBarTitleDisplayMode(.large)
         .task {
@@ -167,8 +144,8 @@ struct AceptarFavor: View {
     }
 }
 
-struct AceptarFavor_Previews: PreviewProvider {
+struct CompletarParo_Previews: PreviewProvider {
     static var previews: some View {
-        AceptarFavor(coreDM: CoreDataManager())
+        DetalleFavor()
     }
 }

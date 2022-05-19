@@ -87,6 +87,11 @@ struct CrearParo: View {
                     let params : [String:Any]  = [
                         "definicion": definicion, "tipo": tipo, "precio": precio,"solicitante": "6269accea7abe6a6287d89f1","de_donde":de_donde,"a_donde":a_donde,"comentario":comentario
                     ]
+                    /*
+                     let params : [String:Any]  = [
+                         "definicion": definicion, "tipo": tipo, "precio": precio,"solicitante": "6269abd9a7abe6a6287d89ef","de_donde":de_donde,"a_donde":a_donde,"comentario":comentario
+                     ]
+                     */
                     print(params)
                     print("Soy un boton yei")
                     crearParo(parameters: params)

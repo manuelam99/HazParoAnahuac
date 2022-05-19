@@ -32,6 +32,7 @@ struct PedidoPendiente: View {
        let a = ParoElement(id: "", definicion: "", tipo: "", precio: 0, solicitante: "", ejecutor: "", deDonde: "", aDonde: "", comentario: "", estatus: 0)
        an.append(a)
        @State var urlconsumo: String = "https://common-sugared-smartphone.glitch.me/paros/solicitante/6269accea7abe6a6287d89f1/pendientes"
+       //@State var urlconsumo: String = "https://common-sugared-smartphone.glitch.me/paros/solicitante/6269abd9a7abe6a6287d89ef/pendientes"
             print (urlconsumo)
             guard let url = URL(string: urlconsumo) else {
                 print("error")
@@ -56,7 +57,7 @@ struct PedidoPendiente: View {
         List(self.paros)
             {
                 par in
-                NavigationLink(destination: DetalleFavor(paro : par)){
+                NavigationLink(destination: CompletarParo(paro : par)){
                     ElementoListaParo(paro: par, color:"",titulo: "Pedidos Pendiente")
                 }
             }
